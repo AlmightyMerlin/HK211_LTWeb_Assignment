@@ -27,6 +27,11 @@ strong {
 ul.no-bullets {
   list-style-type: none;
 }
+.leader li {
+   font-size: large;
+   text-align: left;
+   margin-left: 450px;	
+}
 li {
     font-size: large;
     
@@ -45,7 +50,7 @@ li {
 }	
 footer {
     font-size: large;
-    height: 150px;
+    height: 160px;
     grid-area: footer;
     background-color: #151B54;
     color: #ffffff;

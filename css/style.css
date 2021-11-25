@@ -194,7 +194,7 @@ img.logo {
     text-align: center;
 }
 .card.brand:hover {
-    border: 1.5px solid #23219e;
+    border: .9px solid #23219e;
 }
 
 .card.price {
@@ -233,11 +233,13 @@ ul {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
-i {
-    border: solid black;
-    border-width: 0 3px 3px 0;
+header i {
     display: inline-block;
-    padding: 3px;
+    padding: 10px;
+}
+header i:hover {
+    color: #06C1D4;
+    transition: color .5s;
 }
 
 
@@ -266,4 +268,23 @@ i {
     height: 20px;
     line-height: 50px;
     margin-left: 0 !important;
+}
+
+@media only screen and (max-width : 768px) {
+
+    header {
+        grid-area: header;
+        padding: 1rem 1rem 0;
+    }
+    main {
+        grid-area: main;
+        padding: 3rem 1rem 3rem;
+    }
+    footer {
+        grid-area: footer;
+        background-color: #151B54;
+        color: #ffffff;
+        padding: 0 1rem 0;
+    }
+
 }

@@ -7,42 +7,40 @@ body {
   justify-content: center;
   align-items: center;
 }
-.mails {
-    font-size: x-large;
-    text-align:center;
-}
-.mails li {
-    font-size: large;
-    text-align: left;
-    margin-left: 500px;
-}
-.map {
+.about {
     font-size: x-large;
     text-align: center;
 }
-iframe {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-    height: 800px;
+.about p {
+    font-size: large;
+    text-align: left;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+.about p::first-letter {
+    font-size: 200%;
 }
 strong {
     color: red;
 }
-.phones {
-    font-size: x-large;
-    text-align: center;
+
+img {
+    width: 300px;
+    height: 300px;	
 }
+table, th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+  margin-left: 250px;
+}
+th, td {
+  font-size: large;
+}
+
 ul.no-bullets {
   list-style-type: none;
 }
-.phones li {
-    font-size: large;
-    text-align: left;
-    margin-left: 520px;
-}
-.row1 li {
+li {
     font-size: large;
     
 }
@@ -73,11 +71,3 @@ footer .logo {
 footer a {
     color: #ffffff;
 }
-
-
-
-
-
-
-
-

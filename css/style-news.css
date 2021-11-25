@@ -2,47 +2,45 @@ body {
     width: 100%;
     margin: 0 auto;
 }
-.intro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.mails {
+
+.news {
     font-size: x-large;
     text-align:center;
 }
-.mails li {
-    font-size: large;
-    text-align: left;
-    margin-left: 500px;
-}
-.map {
+.latest-news p {
     font-size: x-large;
-    text-align: center;
+    text-align: right;
+    margin-right: 300px;
 }
-iframe {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-    height: 800px;
+.latest-news a {
+    font-size: x-large;
 }
+.latest-news a:visited {
+    color: blue;
+}
+.BKU-news p {
+    font-size: x-large;
+    text-align: right;
+    margin-right: 300px;
+}
+.BKU-news a {
+    font-size: x-large;
+}
+.BKU-news a:visited {
+    color: blue;
+}
+
+
+
 strong {
     color: red;
 }
-.phones {
-    font-size: x-large;
-    text-align: center;
-}
+
 ul.no-bullets {
   list-style-type: none;
 }
-.phones li {
-    font-size: large;
-    text-align: left;
-    margin-left: 520px;
-}
-.row1 li {
+
+li {
     font-size: large;
     
 }
@@ -73,11 +71,3 @@ footer .logo {
 footer a {
     color: #ffffff;
 }
-
-
-
-
-
-
-
-
