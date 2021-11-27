@@ -99,7 +99,7 @@ header a:hover {
 
 
 .Title {
-    color: #000000;
+    
     border: none;
     text-align: center;
     display: inline-block;
@@ -108,6 +108,32 @@ header a:hover {
     line-height: 20px;
     position: relative;
     background-color: #ffffff;
+    
+}
+#blink1 {
+   color: blue;
+   font-weight: bold;
+   transition: 0.2s;
+}
+#blink2 {
+   color: blue;
+   font-weight: bold;
+   transition: 0.2s;
+}
+#blink3 {
+   color: blue;
+   font-weight: bold;
+   transition: 0.2s;
+}
+#blink4 {
+   color: blue;
+   font-weight: bold;
+   transition: 0.2s;
+}
+#blink5 {
+   color: blue;
+   font-weight: bold;
+   transition: 0.2s;
 }
 .dropdown {
     position: relative;
@@ -115,6 +141,7 @@ header a:hover {
 }  
 .dropdown-content {
     display: none;
+    color: red;
     position: absolute;
     background-color: #ffffff;
     border: 1px solid #000000;
