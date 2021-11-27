@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -21,17 +22,17 @@
         </div>
         <div>
             <div class="dropdown">
-	    	<a class="Title" href="intro.html">Giới thiệu</a>
+	    	<a id="blink1" class="Title" href="intro.html">Giới thiệu</a>
 	    </div>
             <div class="dropdown">
-	    	<a class="Title" href="contact.html">Liên hệ</a>
+	    	<a id="blink2" class="Title" href="contact.html">Liên hệ</a>
 	    </div>
 	    <div class="dropdown">
-	    	<a class="Title" href="news.html">Tin tức</a>
+	    	<a id="blink3" class="Title" href="news.html">Tin tức</a>
 	    </div>
 	    <div class="dropdown">
                 
-		<a class="Title" href="#">Laptop</a>
+		<a id="blink4" class="Title" href="#">Laptop</a>
                 <div class="dropdown-content">
                     <a href="#">Dell</a>
                     <a href="#">Lenovo</a>
@@ -42,7 +43,7 @@
                 </div>
             </div>
             <div class="dropdown">
-                <a class="Title" href="#">PC</a>
+                <a id="blink5" class="Title" href="#">PC</a>
                 <div class="dropdown-content">
                     <a href="#">Dell</a>
                     <a href="#">Lenovo</a>
@@ -52,7 +53,36 @@
                     <a href="#">Acer</a>
                 </div>
             </div>
-           
+            <script type="text/javascript">
+      		var blink1 = document.getElementById('blink1');
+      		setInterval(function() {
+       		blink1.style.opacity = (blink1.style.opacity == 0 ? 1 : 0);
+      		}, 1000);
+   	    </script> 
+            <script type="text/javascript">
+      		var blink2 = document.getElementById('blink2');
+      		setInterval(function() {
+       		blink2.style.opacity = (blink2.style.opacity == 0 ? 1 : 0);
+      		}, 1000);
+   	    </script>
+	    <script type="text/javascript">
+      		var blink3 = document.getElementById('blink3');
+      		setInterval(function() {
+       		blink3.style.opacity = (blink3.style.opacity == 0 ? 1 : 0);
+      		}, 1000);
+   	    </script>
+	    <script type="text/javascript">
+      		var blink4 = document.getElementById('blink4');
+      		setInterval(function() {
+       		blink4.style.opacity = (blink4.style.opacity == 0 ? 1 : 0);
+      		}, 1000);
+   	    </script>
+	    <script type="text/javascript">
+      		var blink5 = document.getElementById('blink5');
+      		setInterval(function() {
+       		blink5.style.opacity = (blink5.style.opacity == 0 ? 1 : 0);
+      		}, 1000);
+   	    </script>
         </div>
         
         <div>
