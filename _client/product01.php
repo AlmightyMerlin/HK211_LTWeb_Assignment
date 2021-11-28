@@ -1,7 +1,7 @@
 <?php
 require_once 'php/init.php';
 
-$product = findProductById(1);
+$product = findProductById('SP001');
 ?>
 
 <!doctype html>
@@ -9322,8 +9322,9 @@ $product = findProductById(1);
                                         <div class="md:flex">
                                             <div class="productdetail__thumb md:w-1/2 md:pr-6">
                                                 <div class="block md:hidden">
-                                                    <h2 class="font-bold text-xl leading-7 mb-0 text-body-main">Dell
-                                                        Inspiron 15 3505 (Chính hãng)</h2>
+                                                    <h2 class="font-bold text-xl leading-7 mb-0 text-body-main">
+                                                        <?php echo $product['pro_name'] ?>
+                                                    </h2>
                                                 </div>
                                                 <div class="box-large">
                                                     <div class="box-top">
@@ -9348,11 +9349,12 @@ $product = findProductById(1);
 
                                             <div class="text-sm productdetail__info md:w-1/2">
                                                 <div class="hidden md:block">
-                                                    <h2 itemprop="name" class="mb-4 font-bold leading-tight font-primary text-2rem">Dell
-                                                        Inspiron 15 3505 (Chính hãng)</h2>
+                                                    <h2 itemprop="name" class="mb-4 font-bold leading-tight font-primary text-2rem">
+                                                        <?php echo $product['pro_name'] ?> (Chính hãng)
+                                                    </h2>
                                                     <div class="flex flex-col justify-between mb-2 md:flex-row">
                                                         <div class="flex-1 mb-4 description">
-                                                            <div itemprop="brand" itemtype="http://schema.org/Brand" itemscope="itemscope" class="flex items-center mb-3">
+                                                            <div itemprop="brand" itemtype="http://schema.org/brand" itemscope="itemscope" class="flex items-center mb-3">
                                                                 <span>Thương hiệu:</span>&nbsp;
 
                                                                 <img class="w-10" src= <?php echo $product['url'] ?> alt="Dell">
@@ -9365,31 +9367,31 @@ $product = findProductById(1);
                                                                 </p>
                                                                 <ul>
                                                                     <li>
-                                                                        <strong>Vi xử lý</strong>: <?php echo $product['PROCESSOR'] ?>
+                                                                        <strong>Vi xử lý</strong>: <?php echo $product['processor'] ?>
                                                                     </li>
                                                                     <li>
-                                                                        <strong>Màn hình</strong>: <?php echo $product['DISPLAY'] ?>
+                                                                        <strong>Màn hình</strong>: <?php echo $product['display'] ?>
                                                                     </li>
                                                                     <li>
-                                                                        <strong>RAM</strong>: <?php echo $product['MEMORY'] ?>
+                                                                        <strong>RAM</strong>: <?php echo $product['memory'] ?>
                                                                     </li>
                                                                     <li>
-                                                                        <strong>Card đồ họa</strong>: <?php echo $product['GRAPHICS'] ?>
+                                                                        <strong>Card đồ họa</strong>: <?php echo $product['graphics'] ?>
                                                                     </li>
                                                                     <li>
-                                                                        <strong>Lưu trữ</strong>: <?php echo $product['STORAGE'] ?>
+                                                                        <strong>Lưu trữ</strong>: <?php echo $product['storage'] ?>
                                                                     </li>
                                                                     <li>
-                                                                        <strong>Pin</strong>: <?php echo $product['BATTERY'] ?>
+                                                                        <strong>Pin</strong>: <?php echo $product['battery'] ?>
                                                                     </li>
                                                                     <li>
-                                                                        <strong>Kết nối chính</strong>: <?php echo $product['PORTS'] ?>
+                                                                        <strong>Kết nối chính</strong>: <?php echo $product['ports'] ?>
                                                                     </li>
                                                                     <li>
-                                                                        <strong>Cân nặng</strong>: <?php echo $product['WEIGHT'] ?>
+                                                                        <strong>Cân nặng</strong>: <?php echo $product['weight'] ?>
                                                                     </li>
                                                                     <li>
-                                                                        <strong>Hệ điều hành</strong>: <?php echo $product['OS'] ?>
+                                                                        <strong>Hệ điều hành</strong>: <?php echo $product['os'] ?>
                                                                         bản quyền
                                                                     </li>
                                                                 </ul>
@@ -9470,7 +9472,7 @@ $product = findProductById(1);
                                                     Đánh giá chi tiết</h2>
                                                 <!---->
                                                 <div class="rte">
-                                                    <p><?php echo $product['description'] ?></p>
+                                                    <p><?php echo $product['desc'] ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -9516,10 +9518,6 @@ $product = findProductById(1);
         </div>
     </div>
 
-    <?php
-    foreach ($product as $key => $value) {
-        echo "$key: $value<br>";
-    } ?>
 <!-- 
     <script>
         function getProductImagesFromDir(url, numberOfImages) {
