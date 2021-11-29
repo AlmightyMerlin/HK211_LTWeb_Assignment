@@ -32,16 +32,6 @@ $listBrands = getBrands();
                         <?php foreach ($listBrands as $brand) : ?>
                             <a href="#"><?php echo $brand['name']; ?></a>
                         <?php endforeach; ?>
-                        <!-- <a href="#">Dell</a>
-                        <a href="#">Microsoft</a>
-                        <a href="#">Lenovo</a>
-                        <a href="#">Asus</a>
-                        <a href="#">Razer</a>
-                        <a href="#">MSI</a>
-                        <a href="#">HP</a>
-                        <a href="#">Acer</a>
-                        <a href="#">Apple</a>
-                        <a href="#">LG</a> -->
                         <a href="#">Theo nhu cầu</a>
                     </div>
                 </div>
@@ -70,16 +60,21 @@ $listBrands = getBrands();
             </div>
             <div class="row left">
                 <div class="card">
-                    <a href="product.html">
-                        <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
-                    </a>
+                    <form action="product01.php">
+                        <button>
+                            <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
+                        </button>
+                    </form>
                     <div class="card-body">
-                        <a href="product.html">
-                            <h2><b>Dell Inspiron 3505</b></h2>
-                        </a>
+                        <form action="product01.php">
+                            <button>
+                                <h2><b>Dell Inspiron 3505</b></h2>
+                            </button>
+                        </form>
                         <div class="price">201</div>
                     </div>
                 </div>
+                
                 <div class="card">
                     <a href="product.html">
                         <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
@@ -145,7 +140,7 @@ $listBrands = getBrands();
                 <div class="brand">Thương hiệu</div>
                 <?php foreach ($listBrands as $brand) : ?>
                     <a class="card brand" href="#">
-                        <img style="width: 40%" class="blogo" src=<?php echo $brand['url']; ?> alt=<?php echo $brand['name']; ?> />
+                        <img style="width: 40%;" class="blogo" src=<?php echo $brand['url']; ?> alt=<?php echo $brand['name']; ?> />
                     </a>
                 <?php endforeach; ?>
                 <!-- <a class="card brand" href="#">

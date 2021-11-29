@@ -4,6 +4,16 @@ require_once 'php/init.php';
 $product = findProductById('SP001');
 ?>
 
+<?php
+if (!function_exists('currency_format')) {
+    function currency_format($number, $suffix = '₫') {
+        if (!empty($number)) {
+            return number_format($number, 0, ',', '.') . "{$suffix}";
+        }
+    }
+}
+?>
+
 <!doctype html>
 <html data-n-head-ssr lang="vi" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22vi%22%7D%7D">
 
@@ -9450,8 +9460,9 @@ $product = findProductById('SP001');
                                                         <div class="text-sm font-semibold price md:text-right">
                                                             <div style="font-size: x-large; text-decoration: line-through">
                                                                 23.290.000 ₫</div>
-                                                            <div class="text-red-400" style="color: #d53b2a;"><?php echo $product['price'] ?>
-                                                                ₫</div>
+                                                            <div class="text-red-400" style="color: #d53b2a;">
+                                                                <?php echo currency_format($product['price']); ?>
+                                                            </div>
                                                             <!---->
                                                         </div>
                                                     </div>

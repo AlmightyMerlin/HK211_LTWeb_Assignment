@@ -39,10 +39,10 @@ CREATE TABLE `brand` (
 
 INSERT INTO `brand` (`brand_id`, `name`, `brand_short_desc`, `url`) VALUES
 ('1', 'Dell', default, 'images/Dell.png'),
-('2', 'Lenovo', default, 'images/Lenovo.png'),
+('2', 'Lenovo', default, 'images/Lenovo.jpg'),
 ('3', 'Apple', default, 'images/Apple.png'),
 ('4', 'Razer', default, 'images/Razer.png'),
-('5', 'Asus', default, 'images/Asus.png'),
+('5', 'Asus', default, 'images/Asus.jpg'),
 ('6', 'Acer', default, 'images/Acer.png');
 
 -- --------------------------------------------------------
