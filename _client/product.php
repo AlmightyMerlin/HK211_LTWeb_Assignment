@@ -1,10 +1,6 @@
 <?php
 require_once 'php/init.php';
 
-$product = findProductById('SP003');
-?>
-
-<?php
 if (!function_exists('currency_format')) {
     function currency_format($number, $suffix = '₫') {
         if (!empty($number)) {
@@ -12,7 +8,15 @@ if (!function_exists('currency_format')) {
         }
     }
 }
+
+if (isset($_POST['btnEdit'])) {
+    $id = $_POST['proId'];
+}
+
+$product = findProductById($id);
+
 ?>
+
 
 <!doctype html>
 <html data-n-head-ssr lang="vi" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22vi%22%7D%7D">

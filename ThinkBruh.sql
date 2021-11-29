@@ -30,20 +30,21 @@ CREATE TABLE `brand` (
   `brand_id` CHAR(1) NOT NULL,
   `name` varchar(50) NOT NULL,
   `brand_short_desc` varchar(500) DEFAULT NULL,
-  `url` varchar(1000) NOT NULL
+  `url` varchar(1000) NOT NULL,
+  `size` INT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `BRAND`
 --
 
-INSERT INTO `brand` (`brand_id`, `name`, `brand_short_desc`, `url`) VALUES
-('1', 'Dell', default, 'images/Dell.png'),
-('2', 'Lenovo', default, 'images/Lenovo.jpg'),
-('3', 'Apple', default, 'images/Apple.png'),
-('4', 'Razer', default, 'images/Razer.png'),
-('5', 'Asus', default, 'images/Asus.jpg'),
-('6', 'Acer', default, 'images/Acer.png');
+INSERT INTO `brand` (`brand_id`, `name`, `brand_short_desc`, `url`, `size`) VALUES
+('1', 'Dell', default, 'images/Dell.png', 40),
+('2', 'Lenovo', default, 'images/Lenovo.jpg', 80),
+('3', 'Apple', default, 'images/Apple.png', 30),
+('4', 'Razer', default, 'images/Razer.png', 45),
+('5', 'Asus', default, 'images/Asus.jpg', 60),
+('6', 'Acer', default, 'images/Acer.png', 80);
 
 -- --------------------------------------------------------
 

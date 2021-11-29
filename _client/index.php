@@ -1,6 +1,14 @@
 <?php
 require_once 'php/init.php';
 
+if (!function_exists('currency_format')) {
+    function currency_format($number, $suffix = '₫') {
+        if (!empty($number)) {
+            return number_format($number, 0, ',', '.') . "{$suffix}";
+        }
+    }
+}
+
 $listBrands = getBrands();
 $listProducts = getProducts();
 ?>
@@ -98,23 +106,27 @@ $listProducts = getProducts();
             <div class="row left">
                 <?php foreach ($listProducts as $product) : ?>
                     <div class="card">
-                        <a href="product01.php">
-                            <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
-                        </a>
-                        <div class="card-body"> 
-                            <a href="product01.php">         
-                                <h2><b>
-                                    <?php echo $product['pro_name']; ?>
-                                </b></h2>
-                            </a>
+                        <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
+                        <div class="card-body">    
+                            <h2><b>
+                                <?php echo $product['pro_name']; ?>
+                            </b></h2>
                             <div class="price">
-                                <?php echo $product['price']; ?>
+                                <?php echo currency_format($product['price']); ?>
                             </div>
                         </div>
-                        <form action="product01.php" method="POST">
-                            <input type="text" value="<?php echo $product['pro_id']; ?>" name="proId" hidden>
-                            <button name="btnEdit" type="submit" class="btn btn-primary btn-sm mr-2">Edit</button>
-                        </form>
+                        <div class="detail-content">
+                            <div>lorem ipppsum jjhds cfhbd djsnnjk cdjsnck</div>
+                            <br>
+                            <div class="add_to_cart">
+                                <a style="color: #ffffff;" href="#">Thêm vào giỏ hàng</a>
+                            </div>
+                            <br>
+                            <form action="product.php" method="POST">
+                                <input type="text" value="<?php echo $product['pro_id']; ?>" name="proId" hidden>
+                                <button name="btnEdit" type="submit" class="btn btn-primary btn-sm mr-2 detail">Chi tiết</button>
+                            </form>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -127,27 +139,9 @@ $listProducts = getProducts();
                 <div class="brand">Thương hiệu</div>
                 <?php foreach ($listBrands as $brand) : ?>
                     <a class="card brand" href="#">
-                        <img style="width: 40%;" class="blogo" src=<?php echo $brand['url']; ?> alt=<?php echo $brand['name']; ?> />
+                        <img style="width: <?php echo $brand['size']; ?>%;" class="blogo" src=<?php echo $brand['url']; ?> alt=<?php echo $brand['name']; ?> />
                     </a>
                 <?php endforeach; ?>
-                <!-- <a class="card brand" href="#">
-                    <img style="width: 40%" class="blogo" src="images/Dell.png" alt="Dell" />
-                </a>
-                <a class="card brand" href="#">
-                    <img style="width: 80%" class="blogo" src="images/Lenovo.jpg" alt="Lenovo" />
-                </a>
-                <a class="card brand" href="#">
-                    <img style="width: 30%" class="blogo" src="images/Apple.png" alt="Apple" />
-                </a>
-                <a class="card brand" href="#">
-                    <img style="width: 45%" class="blogo" src="images/Razer.png" alt="Razer" />
-                </a>
-                <a class="card brand" href="#">
-                    <img style="width: 60%" class="blogo" src="images/Asus.jpg" alt="Asus" />
-                </a>
-                <a class="card brand" href="#">
-                    <img style="width: 80%" class="blogo" src="images/Acer.png" alt="Acer" />
-                </a> -->
             </div>
 
             <br>

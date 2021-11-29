@@ -27,15 +27,17 @@ $listNews = getNews();
 	    <div class="latest-news">
                 <?php foreach ($listNews as $new) : ?>
                     <div class="card">
-                        <p><strong>
-                            <?php echo $new['title']; ?></strong>  
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                            <a href="news01.html">Xem thêm</a>
-                        </p>
-                        <form action="new.php" method="POST">
-                            <input type="text" value="<?php echo $new['new_id']; ?>" name="proId" hidden>
-                            <button name="btnEdit" type="submit" class="btn btn-primary btn-sm mr-2">Edit</button>
-                        </form>
+                            <form action="new.php" method="POST">
+                                <p>
+                                    <strong>
+                                        <?php echo $new['title']; ?>
+                                    </strong>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                                    <input type="text" value="<?php echo $new['new_id']; ?>" name="proId" hidden>
+                                    <button name="btnEdit" type="submit" class="btn btn-primary btn-sm mr-2">Xem thêm</button>
+                                </p>
+                            </form>
+                            &nbsp;
                     </div>
                 <?php endforeach; ?>
 	    </div>
