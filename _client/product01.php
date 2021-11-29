@@ -1,16 +1,12 @@
 <?php
 require_once 'php/init.php';
 
-if (!function_exists('currency_format')) {
-    function currency_format($number, $suffix = '₫') {
-        if (!empty($number)) {
-            return number_format($number, 0, ',', '.') . "{$suffix}";
-        }
-    }
-}
+$defaultId = 'SP001';
 
-if (isset($_POST['btnEdit'])) {
+if (isset($_POST['proId'])) {
     $id = $_POST['proId'];
+} else {
+    $id = $defaultId;
 }
 
 $product = findProductById($id);
@@ -22,7 +18,7 @@ $product = findProductById($id);
 <html data-n-head-ssr lang="vi" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22vi%22%7D%7D">
 
 <head>
-    <title>Dell Inspiron 15 3505</title>
+    <title><?php echo $product['pro_name'] ?></title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta data-n-head="ssr" data-hid="lang" name="lang" content="vi">
@@ -334,7 +330,7 @@ $product = findProductById($id);
             height: auto;
         }
 
-        .container {
+        /* .container {
             width: 100%;
             margin-right: auto;
             margin-left: auto;
@@ -376,7 +372,7 @@ $product = findProductById($id);
             .container {
                 max-width: 1600px;
             }
-        }
+        } */
 
         .bg-black {
             --bg-opacity: 1;
@@ -3863,13 +3859,14 @@ $product = findProductById($id);
             -ms-perspective: 1200px;
         }
 
+        /* 
         .container {
             max-width: 1254px;
             margin: auto;
             padding-left: 16px;
             padding-right: 16px;
             position: relative;
-        }
+        } */
 
         .row {
             margin-left: -15px;
@@ -9287,13 +9284,13 @@ $product = findProductById($id);
 </head>
 
 <body>
-    <noscript data-n-head="ssr" data-hid="gtm-noscript" data-pbody="true">
+    <!-- <noscript data-n-head="ssr" data-hid="gtm-noscript" data-pbody="true">
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THD95QT&" height="0" width="0" style="display:none;visibility:hidden" title="gtm"></iframe>
-    </noscript>
+    </noscript> -->
     <div data-server-rendered="true" id="__nuxt">
         <!---->
         <div id="__layout">
-            <div id="app" class="min-h-screen flex flex-col">
+            <!-- <div id="app" class="min-h-screen flex flex-col">
                 <div data-fetch-key="Header:0" class="sticky_zindex relative z-20">
                     <div id="appleid-signin" data-color="black" data-border="true" data-type="sign in" style="display:none;"></div>
                     <header id="header" class="setcion header header-mobile">
@@ -9311,7 +9308,6 @@ $product = findProductById($id);
                                                 </use>
                                             </svg>
                                         </span>
-                                        <!---->
                                     </a>
                                     <div class="wrap-fill" style="display:none;">
                                         <div class="title flex justify-center">
@@ -9325,215 +9321,217 @@ $product = findProductById($id);
                             </div>
                         </div>
                     </header>
-                </div>
-                <main id="main" class="md:pt-6 mb-auto border-t border-gray-100 md:border-t-0">
+                </div> -->
 
-                    <div class="container clearfix">
+            <?php include 'php/header.php'; ?>
+            <main id="main" class="md:pt-6 mb-auto border-t border-gray-100 md:border-t-0">
+
+                <div class="container clearfix">
+                    <div>
                         <div>
-                            <div>
-                                <div itemtype="http://schema.org/Product" itemscope="itemscope" class="page-detail pt-4 md:pt-0">
-                                    <section class="content-middle productdetail clearfix mb-7 md:mb-14">
-                                        <div class="md:flex">
-                                            <div class="productdetail__thumb md:w-1/2 md:pr-6">
-                                                <div class="block md:hidden">
-                                                    <h2 class="font-bold text-xl leading-7 mb-0 text-body-main">
-                                                        <?php echo $product['pro_name'] ?>
-                                                    </h2>
+                            <div itemtype="http://schema.org/Product" itemscope="itemscope" class="page-detail pt-4 md:pt-0">
+                                <section class="content-middle productdetail clearfix mb-7 md:mb-14">
+                                    <div class="md:flex">
+                                        <div class="productdetail__thumb md:w-1/2 md:pr-6">
+                                            <div class="block md:hidden">
+                                                <h2 class="font-bold text-xl leading-7 mb-0 text-body-main">
+                                                    <?php echo $product['pro_name'] ?>
+                                                </h2>
+                                            </div>
+                                            <div class="box-large">
+                                                <div class="box-top">
+                                                    <img id="img-large" class="img-fluid" src="../Images/Images-Dell-Inspiron15-3505/item01.jpg" alt="">
                                                 </div>
-                                                <div class="box-large">
-                                                    <div class="box-top">
-                                                        <img id="img-large" class="img-fluid" src="../Images/Images-Dell-Inspiron15-3505/item01.jpg" alt="">
+                                                <div class="box-bottom">
+                                                    <div>
+                                                        <a href="#" onclick="changeImage(1)"><img src="../Images/Images-Dell-Inspiron15-3505/item01.jpg" alt=""></a>
                                                     </div>
-                                                    <div class="box-bottom">
-                                                        <div>
-                                                            <a href="#" onclick="changeImage(1)"><img src="../Images/Images-Dell-Inspiron15-3505/item01.jpg" alt=""></a>
-                                                        </div>
-                                                        <div>
-                                                            <a href="#" onclick="changeImage(2)"><img src="../Images/Images-Dell-Inspiron15-3505/item02.jpg" alt=""></a>
-                                                        </div>
-                                                        <div>
-                                                            <a href="#" onclick="changeImage(3)"><img src="../Images/Images-Dell-Inspiron15-3505/item03.jpg" alt=""></a>
-                                                        </div>
-                                                        <div>
-                                                            <a href="#" onclick="changeImage(4)"><img src="../Images/Images-Dell-Inspiron15-3505/item04.jpg" alt=""></a>
-                                                        </div>
+                                                    <div>
+                                                        <a href="#" onclick="changeImage(2)"><img src="../Images/Images-Dell-Inspiron15-3505/item02.jpg" alt=""></a>
+                                                    </div>
+                                                    <div>
+                                                        <a href="#" onclick="changeImage(3)"><img src="../Images/Images-Dell-Inspiron15-3505/item03.jpg" alt=""></a>
+                                                    </div>
+                                                    <div>
+                                                        <a href="#" onclick="changeImage(4)"><img src="../Images/Images-Dell-Inspiron15-3505/item04.jpg" alt=""></a>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div class="text-sm productdetail__info md:w-1/2">
-                                                <div class="hidden md:block">
-                                                    <h2 itemprop="name" class="mb-4 font-bold leading-tight font-primary text-2rem">
-                                                        <?php echo $product['pro_name'] ?> (Chính hãng)
-                                                    </h2>
-                                                    <div class="flex flex-col justify-between mb-2 md:flex-row">
-                                                        <div class="flex-1 mb-4 description">
-                                                            <div itemprop="brand" itemtype="http://schema.org/brand" itemscope="itemscope" class="flex items-center mb-3">
-                                                                <span>Thương hiệu:</span>&nbsp;
-
-                                                                <img class="w-10" src= <?php echo $product['url'] ?> alt="Dell">
-
-                                                                <meta itemprop="name" content="Dell">
-                                                            </div>
-                                                            <div itemprop="description" class="pr-12">
-                                                                <p>
-                                                                    <strong>Y1N1T5</strong>
-                                                                </p>
-                                                                <ul>
-                                                                    <li>
-                                                                        <strong>Vi xử lý</strong>: <?php echo $product['processor'] ?>
-                                                                    </li>
-                                                                    <li>
-                                                                        <strong>Màn hình</strong>: <?php echo $product['display'] ?>
-                                                                    </li>
-                                                                    <li>
-                                                                        <strong>RAM</strong>: <?php echo $product['memory'] ?>
-                                                                    </li>
-                                                                    <li>
-                                                                        <strong>Card đồ họa</strong>: <?php echo $product['graphics'] ?>
-                                                                    </li>
-                                                                    <li>
-                                                                        <strong>Lưu trữ</strong>: <?php echo $product['storage'] ?>
-                                                                    </li>
-                                                                    <li>
-                                                                        <strong>Pin</strong>: <?php echo $product['battery'] ?>
-                                                                    </li>
-                                                                    <li>
-                                                                        <strong>Kết nối chính</strong>: <?php echo $product['ports'] ?>
-                                                                    </li>
-                                                                    <li>
-                                                                        <strong>Cân nặng</strong>: <?php echo $product['weight'] ?>
-                                                                    </li>
-                                                                    <li>
-                                                                        <strong>Hệ điều hành</strong>: <?php echo $product['os'] ?>
-                                                                        bản quyền
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="mt-4 changer_color" style="font-size:16px;">
-                                                                <div>
-                                                                    <strong>Màu sắc</strong>: Đen
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="mb-4 text-sm service text-dark-gray">
-                                                                <div class="p-4 border border-gray-100 rounded min-w-262px max-w-262px">
-                                                                    <div class="mb-2 text-base font-semibold leading-6">
-                                                                        Bảo hành</div>
-                                                                    <div>
-                                                                        <ul>
-                                                                            <li>
-                                                                                Sản phẩm <strong>chính hãng</strong>
-                                                                            </li>
-                                                                            <li>
-                                                                                Bảo hành <strong>12 tháng</strong> tại
-                                                                                TTBH Dell Việt Nam
-                                                                            </li>
-                                                                            <li>
-                                                                                <strong>Bảo hành tại nhà 24/7</strong>
-                                                                            </li>
-                                                                            <li>Đổi mới trong <strong>15 ngày</strong>
-                                                                                đầu tiên
-                                                                        </ul>
-                                                                    </div>
-                                                                    <!---->
-                                                                </div>
-                                                            </div>
-                                                            <div class="p-4 text-red border border-gray-100 rounded min-w-262px max-w-262px">
-                                                                Khuyến mãi <strong>800.000đ</strong> khi mua Microsoft
-                                                                Office 365 kèm laptop.</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!---->
-                                                <!---->
-                                                <!---->
-                                                <div itemprop="offers" itemtype="http://schema.org/AggregateOffer" itemscope="itemscope" class="tr cau_hinh">
-                                                    <!---->
-                                                    <meta itemprop="offerCount" content="3">
-                                                    <meta itemprop="priceCurrency" content="VND">
-                                                    <meta itemprop="itemCondition" content="https://schema.org/UsedCondition">
-
-
-
-                                                    <!---->
-                                                    <meta itemprop="highPrice" content=<?php echo $product['price'] ?>>
-                                                    <div class="relative items-start md:flex">
-
-                                                        <div class="text-sm font-semibold price md:text-right">
-                                                            <div style="font-size: x-large; text-decoration: line-through">
-                                                                23.290.000 ₫</div>
-                                                            <div class="text-red-400" style="color: #d53b2a;">
-                                                                <?php echo currency_format($product['price']); ?>
-                                                            </div>
-                                                            <!---->
-                                                        </div>
-                                                    </div>
-                                                    <!---->
-                                                </div>
-                                            </div>
-
-
-                                            <!---->
                                         </div>
-                                    </section>
-                                </div>
-                                <section class="content-bottom clearfix">
-                                    <div class="min-container">
-                                        <div class="tong-quan">
-                                            <div class="content-danhgia mb-10 has-toggle">
-                                                <h2 class="font-primary font-bold text-xl md:text-2rem mb-4 md:mb-13 leading-tight">
-                                                    Đánh giá chi tiết</h2>
-                                                <!---->
-                                                <div class="rte">
-                                                    <p><?php echo $product['desc'] ?></p>
+
+                                        <div class="text-sm productdetail__info md:w-1/2">
+                                            <div class="hidden md:block">
+                                                <h2 itemprop="name" class="mb-4 font-bold leading-tight font-primary text-2rem">
+                                                    <?php echo $product['pro_name'] ?> (Chính hãng)
+                                                </h2>
+                                                <div class="flex flex-col justify-between mb-2 md:flex-row">
+                                                    <div class="flex-1 mb-4 description">
+                                                        <div itemprop="brand" itemtype="http://schema.org/brand" itemscope="itemscope" class="flex items-center mb-3">
+                                                            <span>Thương hiệu:</span>&nbsp;
+
+                                                            <img class="w-10" src=<?php echo $product['url'] ?> alt="Dell">
+
+                                                            <meta itemprop="name" content="Dell">
+                                                        </div>
+                                                        <div itemprop="description" class="pr-12">
+                                                            <p>
+                                                                <strong>Y1N1T5</strong>
+                                                            </p>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Vi xử lý</strong>: <?php echo $product['processor'] ?>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Màn hình</strong>: <?php echo $product['display'] ?>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>RAM</strong>: <?php echo $product['memory'] ?>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Card đồ họa</strong>: <?php echo $product['graphics'] ?>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Lưu trữ</strong>: <?php echo $product['storage'] ?>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Pin</strong>: <?php echo $product['battery'] ?>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Kết nối chính</strong>: <?php echo $product['ports'] ?>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Cân nặng</strong>: <?php echo $product['weight'] ?>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Hệ điều hành</strong>: <?php echo $product['os'] ?>
+                                                                    bản quyền
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="mt-4 changer_color" style="font-size:16px;">
+                                                            <div>
+                                                                <strong>Màu sắc</strong>: Đen
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="mb-4 text-sm service text-dark-gray">
+                                                            <div class="p-4 border border-gray-100 rounded min-w-262px max-w-262px">
+                                                                <div class="mb-2 text-base font-semibold leading-6">
+                                                                    Bảo hành</div>
+                                                                <div>
+                                                                    <ul>
+                                                                        <li>
+                                                                            Sản phẩm <strong>chính hãng</strong>
+                                                                        </li>
+                                                                        <li>
+                                                                            Bảo hành <strong>12 tháng</strong> tại
+                                                                            TTBH Dell Việt Nam
+                                                                        </li>
+                                                                        <li>
+                                                                            <strong>Bảo hành tại nhà 24/7</strong>
+                                                                        </li>
+                                                                        <li>Đổi mới trong <strong>15 ngày</strong>
+                                                                            đầu tiên
+                                                                    </ul>
+                                                                </div>
+                                                                <!---->
+                                                            </div>
+                                                        </div>
+                                                        <div class="p-4 text-red border border-gray-100 rounded min-w-262px max-w-262px">
+                                                            Khuyến mãi <strong>800.000đ</strong> khi mua Microsoft
+                                                            Office 365 kèm laptop.</div>
+                                                    </div>
                                                 </div>
+                                            </div>
+                                            <!---->
+                                            <!---->
+                                            <!---->
+                                            <div itemprop="offers" itemtype="http://schema.org/AggregateOffer" itemscope="itemscope" class="tr cau_hinh">
+                                                <!---->
+                                                <meta itemprop="offerCount" content="3">
+                                                <meta itemprop="priceCurrency" content="VND">
+                                                <meta itemprop="itemCondition" content="https://schema.org/UsedCondition">
+
+
+
+                                                <!---->
+                                                <meta itemprop="highPrice" content=<?php echo $product['price'] ?>>
+                                                <div class="relative items-start md:flex">
+
+                                                    <div class="text-sm font-semibold price md:text-right">
+                                                        <div style="font-size: x-large; text-decoration: line-through">
+                                                            23.290.000 ₫</div>
+                                                        <div class="text-red-400" style="color: #d53b2a;">
+                                                            <?php echo currency_format($product['price']); ?>
+                                                        </div>
+                                                        <!---->
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+
+
+                                        <!---->
+                                    </div>
+                                </section>
+                            </div>
+                            <section class="content-bottom clearfix">
+                                <div class="min-container">
+                                    <div class="tong-quan">
+                                        <div class="content-danhgia mb-10 has-toggle">
+                                            <h2 class="font-primary font-bold text-xl md:text-2rem mb-4 md:mb-13 leading-tight">
+                                                Đánh giá chi tiết</h2>
+                                            <!---->
+                                            <div class="rte">
+                                                <p><?php echo $product['desc'] ?></p>
                                             </div>
                                         </div>
                                     </div>
-                                    <!---->
-                                    <!---->
-                                </section>
-                            </div>
+                                </div>
+                                <!---->
+                                <!---->
+                            </section>
                         </div>
-
                     </div>
-                </main>
-                <div>
-                    <!---->
-                    <footer class="row1">
-                        <div>
-                            <img class="logo" src="../Images/hcmut.png" alt="Logo" />
-                        </div>
-                        <div>
-                            <ul>
-                                <li>
-                                    <h2 class="normal">Chính sách</h2>
-                                </li>
-                                <li><a href="#">Bảo hành</a></li>
-                                <li><a href="#">Vận chuyển</a></li>
-                                <li><a href="#">Thanh toán</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul>
-                                <li>
-                                    <h2 class="normal">Hệ thống cửa hàng</h2>
-                                </li>
-                                <li>268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh</li>
-                                <li><a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+B%C3%A1ch+khoa+-+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+Qu%E1%BB%91c+gia+TP.HCM/@10.7733743,106.6606193,15z/data=!4m5!3m4!1s0x0:0xef77cd47a1cc691e!8m2!3d10.7733743!4d106.6606193">
-                                        Chỉ đường</a></li>
-                            </ul>
-                        </div>
-                    </footer>
-                    <!---->
+
                 </div>
-            </div>
+            </main>
+            <!-- <div>
+                <footer class="row">
+                    <div>
+                        <img class="logo" src="../Images/hcmut.png" alt="Logo" />
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <h2 class="normal">Chính sách</h2>
+                            </li>
+                            <li><a href="#">Bảo hành</a></li>
+                            <li><a href="#">Vận chuyển</a></li>
+                            <li><a href="#">Thanh toán</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <h2 class="normal">Hệ thống cửa hàng</h2>
+                            </li>
+                            <li>268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh</li>
+                            <li><a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+B%C3%A1ch+khoa+-+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+Qu%E1%BB%91c+gia+TP.HCM/@10.7733743,106.6606193,15z/data=!4m5!3m4!1s0x0:0xef77cd47a1cc691e!8m2!3d10.7733743!4d106.6606193">
+                                    Chỉ đường</a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div> -->
+
+            <?php include 'php/footer.php'; ?>
         </div>
     </div>
+    </div>
 
-<!-- 
+    <!-- 
     <script>
         function getProductImagesFromDir(url, numberOfImages) {
             for (let i = 0; i < numberOfImages; i++) {

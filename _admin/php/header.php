@@ -58,9 +58,8 @@ $title = 'Admin';
 					</a>
 
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Action</a>
-						<a class="dropdown-item" href="#">Another action</a>
-						<a class="dropdown-item" href="#">Something else here</a>
+						<a class="dropdown-item" href="user_edit.php">Information</a>
+						<a class="dropdown-item" href="logout.php">Log out</a>
 					</div>
 				</div>
 			<?php endif; ?>

@@ -20,7 +20,7 @@ $dbName     = 'THINKBRUH';
 $db         = new PDO("mysql:host=$serverName;port=$port;dbname=$dbName", $userName, $password);
 
 // Detect login
-// $currentUser = null;
-// if (isset($_SESSION['userId'])) {
-//     $currentUser = findUserByUsername($_SESSION['userId']);
-// }
+$currentUser = null;
+if (isset($_SESSION['userId'])) {
+    $currentUser = findUserByUsername($_SESSION['userId']);
+}

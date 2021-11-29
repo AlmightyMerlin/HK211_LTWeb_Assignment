@@ -10,7 +10,7 @@ function getUsers()
 function getBrands()
 {
 	global $db;
-	$stmt = $db->query("SELECT * FROM BRAND");
+	$stmt = $db->query("SELECT * FROM brand");
 	if ($stmt == FALSE) return;
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -33,7 +33,7 @@ function deleteUser($id)
 function deleteProduct($id)
 {
 	global $db;
-	$stmt = $db->prepare("DELETE FROM PRODUCT WHERE id = ? ");
+	$stmt = $db->prepare("DELETE FROM product WHERE id = ? ");
 	$stmt->execute(array($id));
 	return $stmt->fetch(PDO::FETCH_ASSOC);
 }
@@ -46,13 +46,20 @@ function editUser($id, $mail, $password, $name, $phone)
 	echo $name;
 	return $stmt->fetch(PDO::FETCH_ASSOC);
 }
+if (!function_exists('currency_format')) {
+    function currency_format($number, $suffix = '₫') {
+        if (!empty($number)) {
+            return number_format($number, 0, ',', '.') . "{$suffix}";
+        }
+    }
+}
 
 // editProduct($id_new, $description_new, $name_new, $brandId_new, $proId_new);
-function editProduct($description, $name, $brandId, $proId)
+function editProduct($description, $name, $price, $brandId, $proId)
 {
 	global $db;
-	$stmt = $db->prepare("UPDATE user SET description = ?, name = ?, BRAND_ID = ?, PRO_ID = ? WHERE id = ? ");
-	$stmt->execute(array($description, $name, $brandId, $proId, $proId));
+	$stmt = $db->prepare("UPDATE product SET product.desc = ?, pro_name = ?, price=?, brand_id = ?, pro_id = ? WHERE pro_id = ? ");
+	$stmt->execute(array($description, $name, $price, $brandId, $proId, $proId));
 	echo $name;
 	return $stmt->fetch(PDO::FETCH_ASSOC);
 }
@@ -75,7 +82,7 @@ function findUserByUsername($username)
 function findProductById($id)
 {
 	global $db;
-	$stmt = $db->prepare("SELECT * FROM BRAND, PRODUCT, SPECS WHERE BRAND.BRAND_ID = PRODUCT.BRAND_ID AND SPECS.PRO_ID = PRODUCT.PRO_ID AND PRODUCT.PRO_ID = ?");
+	$stmt = $db->prepare("SELECT * FROM brand, product, specs WHERE brand.brand_id = product.brand_id AND specs.pro_id = product.pro_id AND product.pro_id = ?");
 	$stmt->execute(array($id));
 	if ($stmt == FALSE) return;
 	return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -84,7 +91,7 @@ function findProductById($id)
 function getProducts()
 {
 	global $db;
-	$stmt = $db->query("SELECT * FROM PRODUCT");
+	$stmt = $db->query("SELECT * FROM product");
 	if ($stmt == FALSE) return;
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

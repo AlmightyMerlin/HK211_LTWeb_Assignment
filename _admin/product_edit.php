@@ -9,11 +9,13 @@ if (!isset($_POST['btn-edit'])) {
     $description = $_POST['description'];
     $id = $_POST['proId'];
     $name = $_POST['name'];
+    $price = $_POST['price'];
     $brandId = $_POST['brandId'];
 } else {
     $description_new = $_POST['description-edit'];
     $id_new = $_POST['id-edit'];
     $name_new = $_POST['name-edit'];
+    $price = $_POST['price-edit'];
     $brandId_new = $_POST['brandId-edit'];
 
     $pattern1 = "/^[0-9]+$/i";
@@ -21,7 +23,7 @@ if (!isset($_POST['btn-edit'])) {
     // if (preg_match($pattern1, $phone_new) && strlen($name_new) <= 100 && preg_match($mail_pattern, $mail_new)) {
     // if (preg_match($pattern1, $phone_new) && strlen($name_new) <= 100) {
     if (true) {
-        editProduct($description_new, $name_new, $brandId_new, $id_new);
+        editProduct($description_new, $name_new, $price_new, $brandId_new, $id_new);
         header('Location: products.php');
     } else $check = false;
 }
@@ -42,11 +44,15 @@ if (!isset($_POST['btn-edit'])) {
                 <legend class="w-auto"> Product Management</legend>
                 <div class="form-group row">
                     <label class="col-3 text-right col-form-label" for="id-edit">ID:</label>
-                    <input type="number" class="form-control col-7" id="id-edit" name="id-edit" value="<?php echo $id; ?>" readonly>
+                    <input type="text" class="form-control col-7" id="id-edit" name="id-edit" value="<?php echo $id; ?>" readonly>
                 </div>
                 <div class="form-group row">
                     <label class="col-3 text-right col-form-label" for="name-edit">Name:</label>
                     <input type="text" class="form-control col-7" id="name-edit" name="name-edit" value="<?php echo $name; ?>">
+                </div>
+                <div class="form-group row">
+                    <label class="col-3 text-right col-form-label" for="price-edit">Price:</label>
+                    <input type="text" class="form-control col-7" id="price-edit" name="price-edit" value="<?php echo $price; ?>">
                 </div>
                 <div class="form-group row">
                     <label class="col-3 text-right col-form-label" for="description-edit">Description:</label>
@@ -56,7 +62,7 @@ if (!isset($_POST['btn-edit'])) {
                     <label class="col-3 text-right col-form-label" for="brandId-edit">Brand:</label>
                     <select multiple class="form-control col-7" id="brandId-edit" name="brandId-edit">
                         <?php foreach ($listBrands as $brand) : ?>
-                            <option <?php echo ($brand['BRAND_ID'] == $brandId) ? 'selected' : '' ?>><?php echo $brand['name']; ?></option>
+                            <option <?php echo ($brand['brand_id'] == $brandId) ? 'selected' : '' ?> value="<?php echo $brand['brand_id'] ?>"><?php echo $brand['name']; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>

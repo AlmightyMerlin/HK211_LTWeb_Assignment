@@ -33,6 +33,11 @@ header {
     padding: 0 12rem 0;
     background-color: #d0e1ff;
 }
+nav {
+    grid-area: header;
+    /* padding: 0 12rem 0; */
+    background-color: #d0e1ff;
+}
 main {
     grid-area: main;
     padding: 3rem 12rem 3rem;
@@ -72,11 +77,18 @@ a {
 
 
 /* Header */
-header a {
+/* header a {
     color: black;
     padding: .1rem; 
 }
 header a:hover {
+    text-shadow: 0px 0px .8px black;
+} */
+nav a {
+    color: black;
+    padding: .1rem; 
+}
+nav a:hover {
     text-shadow: 0px 0px .8px black;
 }
 
@@ -234,6 +246,10 @@ img.logo {
     border: .9px solid #23219e;
 }
 
+.card-selected {
+    border: 1.1px solid #23219e;
+}
+
 .card.price {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: .5rem;
@@ -278,11 +294,11 @@ ul {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
-header i {
+nav i {
     display: inline-block;
     padding: 10px;
 }
-header i:hover {
+nav i:hover {
     color: #0403ff;
     transition: color .5s;
 }
@@ -368,7 +384,7 @@ header i:hover {
 
 @media only screen and (max-width : 768px) {
 
-    header {
+    nav {
         grid-area: header;
         padding: 1rem 1rem 0;
     }
