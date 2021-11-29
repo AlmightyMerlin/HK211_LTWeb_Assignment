@@ -30,20 +30,21 @@ CREATE TABLE `brand` (
   `brand_id` CHAR(1) NOT NULL,
   `name` varchar(50) NOT NULL,
   `brand_short_desc` varchar(500) DEFAULT NULL,
-  `url` varchar(1000) NOT NULL
+  `url` varchar(1000) NOT NULL,
+  `size` INT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `BRAND`
 --
 
-INSERT INTO `brand` (`brand_id`, `name`, `brand_short_desc`, `url`) VALUES
-('1', 'Dell', default, 'images/Dell.png'),
-('2', 'Lenovo', default, 'images/Lenovo.jpg'),
-('3', 'Apple', default, 'images/Apple.png'),
-('4', 'Razer', default, 'images/Razer.png'),
-('5', 'Asus', default, 'images/Asus.jpg'),
-('6', 'Acer', default, 'images/Acer.png');
+INSERT INTO `brand` (`brand_id`, `name`, `brand_short_desc`, `url`, `size`) VALUES
+('1', 'Dell', default, 'images/Dell.png', 40),
+('2', 'Lenovo', default, 'images/Lenovo.jpg', 80),
+('3', 'Apple', default, 'images/Apple.png', 30),
+('4', 'Razer', default, 'images/Razer.png', 45),
+('5', 'Asus', default, 'images/Asus.jpg', 60),
+('6', 'Acer', default, 'images/Acer.png', 80);
 
 -- --------------------------------------------------------
 
@@ -123,6 +124,7 @@ CREATE TABLE `order_item` (
     `quantity`			INT
     
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 INSERT INTO `order_item` VALUES
 ('OD0950241121001','SP001','OD0950241121',1);
@@ -220,6 +222,35 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`,`username`,`name`,`phone`,`password`) VALUES 
 ('USERS00000','testuser','TEST USER','01100011100','123456');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+	`new_id`			CHAR(1)	NOT NULL,
+    `title`				VARCHAR(255),
+    `content`			longtext,
+    `subcontent`		longtext
+    
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+INSERT INTO `news` VALUES
+('1','Lenovo Legion 5 Intel đã có mặt tại Việt Nam!',
+'Ngày 16/9 vừa qua, chiếc laptop Lenovo Legion 5 Intel đầu tiên đã có mặt tại trụ sở của BKU. Đây là sự kiện nhận được sự trông đợi rất lớn từ các khách hàng của BKU trong thời gian qua. Hãy cùng khám phá những hình ảnh đầu tiên của sản phẩm này:<img src="Images/Images-Lenovo-Legion5-Intel2021/item01.jpg"><img src="Images/Images-Lenovo-Legion5-Intel2021/item02.jpg"><img src="Images/Images-Lenovo-Legion5-Intel2021/item03.jpg"><img src="Images/Images-Lenovo-Legion5-Intel2021/item04.jpg">',
+'Với thiết kế hiện đại, giá cả phải chăng cùng với uy tín được Lenovo xây dựng qua nhiều thập kỷ, chắc chắn đây sẽ là một best-seller trong thời gian tới!'),
+('2','No nervous November!',
+'Bạn lo lắng vì vẫn chưa sắm được một em laptop ưng ý "xử đẹp" công việc mùa dịch?<br>Bạn chán nản vì học online mà laptop cứ giật lag, không thể tập trung?<br><strong>Dẹp ngay những suy nghĩ tiêu cực đó nào</strong>. <b>Tháng 11 này</b>, BKU tri ân khách hàng với hàng loạt ưu đãi khủng đi kèm những sản phẩm chất lượng:',
+'<table><tr><th>Sản phẩm</th><th>Ưu đãi khủng</th></tr><tr><td style="width: 200px;">Dell Inspiron 15 3505</td><td style="width: 650px; text-align: left;"><strong>Giảm 500.000đ</strong> + Khuyến mãi 800.000đ khi mua Microsoft Office 365 kèm laptop</td></tr><tr><td style="width: 200px;">Macbook Pro 13 2020</td><td style="width: 650px; text-align: left;"><strong>Giảm 600.000đ</strong> + Tặng 1 bàn phím rời Apple trị giá 650.000đ</td><tr><td style="width: 200px;">Razer Book 13</td><td style="width: 650px; text-align: left;"><strong>Giảm 900.000đ</strong> + Tặng 1 chuột không dây Razer trị giá 550.000đ</td></tr><tr><td style="width: 200px;">Dell XPS 15 7590</td><td style="width: 650px; text-align: left;"><strong>Giảm 700.000đ</strong> + Giảm giá 1.000.000đ khi mua các sản phẩm khác của Dell</td></tr><tr><td style="width: 200px;">Apple Mac Mini 2020</td><td style="width: 650px; text-align: left;"><strong>Giảm 600.000đ</strong> + Giảm giá 15% khi mua 1 sản phẩm Apple có giá dưới 15 triệu đồng</td></tr><tr><td style="width: 200px;">Acer Aspire X1920</td><td style="width: 650px; text-align: left;"><strong>Giảm 400.000đ</strong> + Tặng 1 chuột không dây Acer trị giá 400.000đ</td></tr></table><p>Chương trình áp dụng đến hết ngày <strong>30/11/2021</strong>. <br>Nhanh tay đến và lựa chọn cho mình 1 chiến hữu thật <b>SANG - XỊN - MỊN</b> để chiến đấu mùa dịch nào!</p>'),
+('3', 'Sứ mệnh - Tầm nhìn của BKU',
+'<h1>Sứ mệnh của BKU</h1><p>Đã từng trải qua thời kỳ sinh viên, rồi công tác tại nhiều vị trí công việc khác nhau, những nhà sáng lập của BKU hiểu rõ nỗi trăn trở của một bộ phận không nhỏ khách hàng, <strong>có nhu cầu về những sản phẩm laptop-pc ổn định và chất lượng nhưng lại không dư dả về điều kiện kinh tế</strong>. Từ đó, chúng tôi nung nấu ý định thành lập một doanh nghiệp bán các sản phẩm laptop-pc đáp ứng những nhu cầu nêu trên của quý khách hàng. Mong muốn lớn nhất của chúng tôi chính là việc <b>sẽ ngày càng có nhiều người tiêu dùng được tiếp cận với công nghệ, với tiến bộ khoa học và công nghệ</b> để đất nước ta nhanh chóng bắt kịp xu hướng công nghệ luôn biến đổi không ngừng của thế giới.</p><p>Để thực hiện mong muốn đó, chúng tôi luôn cố gắng đảm bảo ở mức cao nhất chất lượng từng mặt hàng, với mức giá cạnh tranh, khuyến mãi hấp dẫn cùng chế độ bảo hành ổn định, tiện lợi. Mặc dù mới thành lập, nhưng chúng tôi sẽ nỗ lực không ngửng nghỉ để tạo được niềm tin nơi quý khách hàng thân yêu.</p>',
+'<h1>Tầm nhìn của chúng tôi</h1><p>Trích lời ông <strong>Đỗ Quang Minh</strong> - Trưởng Bộ phận Marketing:<br> "Với quyết tâm cao nhất cùng chiến lược kinh doanh bài bản; có sự học hỏi, tiếp thu và chắt lọc những bài học kinh nghiệm của các ông lớn về công nghệ, chúng tôi có thể đặt ra mục tiêu với một cái nhìn đầy lạc quan và tươi sáng: <b>Đến năm 2025, BKU sẽ trở thành 1 ông lớn tại Việt Nam!</b>"</p><p><strong>Vì sao chúng tôi có thể tự tin nói như vậy?</strong> Mặc dù còn rất non trẻ trong thị trường công nghệ Việt Nam, song BKU lại sở hữu đội ngũ nhân viên có năng lực cao, chuyên môn vững vàng, kinh nghiệm dày dặn. Họ đều là những sinh viên giỏi, có tiềm năng, tốt nghiệp tại các đại học danh tiếng như <b>Đại học Bách Khoa TPHCM</b>, <b>Đại học Khoa học Tự nhiên</b>, <b>Đại học FPT</b>... Bên cạnh đó, tầng lớp lãnh đạo - quản lý của BKU luôn luôn đoàn kết, tôn trọng, quan tâm và chia sẻ lẫn nhau; cùng đoàn kết hướng tới một mục tiêu chung là đưa đế chế BKU trở nên cường thịnh. Đó chính là những yếu tố giúp chúng tôi có cái nhìn lạc quan về tương lai phát triển của doanh nghiệp non trẻ này.</p>'),
+('4', 'About BKU - Your new favor',
+'<section class="about"><p>Công ty BKU được thành lập vào <strong>cuối năm 2020</strong>, là công ty hoạt động chủ yếu trong lĩnh vực <strong>điện tử - công nghệ thông tin</strong>. Chúng tôi buôn bán các loại <strong>Laptop - PC</strong> với giá cả phải chăng và phù hợp với nhiều lứa tuổi. Với chất lượng sản phẩm được đảm bảo, cam kết hàng uy tín, chế độ bảo hành ưu đãi, chúng tôi đang cố gắng mở rộng thị trường của mình để tiếp cận rộng rãi hơn với người tiêu dùng cả nước.</p><p>Hiện tại công ty của chúng tôi đã liên kết với <strong>6 ông lớn</strong> về Laptop - PC gồm <strong>Acer, Apple, Asus, Dell, Lenovo và Razer</strong>. BKU vô cùng hân hạnh được phục vụ quý khách hàng để đáp ứng tối đa nhu cầu của quý vị. Xin chân thành cảm ơn!</p></section>',
+'<section class="intro"><video width="650" controls><source src="../Video/Intro.mp4" type="video/mp4">Sorry, Your browser does not support HTML5 video.</video></section><section class="leader"><h1>Leaders</h1><ul class="no-bullets"><li><p><strong>Trần Ngọc Anh Quân</strong>: Chủ tịch hội đồng quản trị</p></li><li><p><strong>Trần An Hạ</strong>: Trưởng bộ phận Quản lý nhân sự</p></li><li><p><strong>Đỗ Quang Minh</strong>: Trưởng bộ phận Marketing</p></li><li><p><strong>Lê Hồng Đức</strong>: Trưởng bộ phận Sales</p></li></ul></section>');
 ------------------------------------------------------
 --
 -- Indexes for dumped tables
@@ -326,6 +357,13 @@ ALTER TABLE `product`
 --
 ALTER TABLE `specs`
   ADD CONSTRAINT `SPECS_ibfk_1` FOREIGN KEY (`pro_id`) REFERENCES `product` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  
+--
+-- Constraints for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`new_id`);
+  
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
@@ -349,7 +387,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `mail`, `password`, `name`, `phone`, `createdAt`, `role`) VALUES
 ('0', 'duc.le200115@hcmut.edu.vn', 'password', 'Duc Le', '0911360460', '2021-11-22 17:40:08', 0),
-('1', 'staff0@hcmut.edu.vn', 'password', 'staff0', '0123456789', '2021-11-22 18:29:29', 1);
+('1', 'customer@hcmut.edu.vn', 'password', 'customer', '0123456789', '2021-11-22 18:29:29', 2);
 
 --
 -- Indexes for dumped tables

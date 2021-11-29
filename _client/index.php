@@ -1,6 +1,14 @@
 <?php
 require_once 'php/init.php';
 
+if (!function_exists('currency_format')) {
+    function currency_format($number, $suffix = '₫') {
+        if (!empty($number)) {
+            return number_format($number, 0, ',', '.') . "{$suffix}";
+        }
+    }
+}
+
 $listBrands = getBrands();
 $listProducts = getProducts();
 
@@ -48,6 +56,18 @@ if (isset($_POST['brandId'])) {
                         </a>
                         <div class="price">
                             <?php echo currency_format($product['price']); ?>
+                        </div>
+                        <div class="detail-content">
+                            <div>lorem ipppsum jjhds cfhbd djsnnjk cdjsnck</div>
+                            <br>
+                            <div class="add_to_cart">
+                                <a style="color: #ffffff;" href="#">Thêm vào giỏ hàng</a>
+                            </div>
+                            <br>
+                            <form action="product.php" method="POST">
+                                <input type="text" value="<?php echo $product['pro_id']; ?>" name="proId" hidden>
+                                <button name="btnEdit" type="submit" class="btn btn-primary btn-sm mr-2 detail">Chi tiết</button>
+                            </form>
                         </div>
                     </div>
                 </div>

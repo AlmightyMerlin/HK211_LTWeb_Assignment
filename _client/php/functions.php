@@ -66,6 +66,23 @@ function getProducts()
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getNews()
+{
+	global $db;
+	$stmt = $db->query("SELECT * FROM NEWS");
+	if ($stmt == FALSE) return;
+	return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function findNewById($id)
+{
+	global $db;
+	$stmt = $db->prepare("SELECT * FROM NEWS WHERE NEWS.NEW_ID = ?");
+	$stmt->execute(array($id));
+	if ($stmt == FALSE) return;
+	return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 // function addUser($id, $mail, $password, $name, $phone, $role)
 // {
 // 	global $db;

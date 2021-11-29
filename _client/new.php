@@ -1,9 +1,20 @@
+<?php
+require_once 'php/init.php';
+
+if (isset($_POST['btnEdit'])) {
+    $id = $_POST['proId'];
+}
+
+$new = findNewById($id);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>News about BKU</title>
+        <title>Lenovo Legion 5 Intel đã có mặt tại Việt Nam!</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/style-news.css">
+        <link rel="stylesheet" href="../css/style-news-clicked.css">
 	
     </head>
     <body>
@@ -15,27 +26,21 @@
         </header>
         <!-- End Header -->
 
-        <!-- Start Latest News -->
-        <section class="news">
-            <h1>Tin tức mới nhất</h1>
-	    <div class="latest-news">
-            	<p><strong>Lenovo Legion 5 Intel đã có mặt tại Việt Nam!</strong>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="news01.html">Xem thêm</a></p>
-		<p><strong>Bổ nhiệm bà Trần An Hạ làm Trưởng bộ phận Quản lý nhân sự BKU</strong>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="news02.html">Xem thêm</a></p>
-		<p><strong>No nervous November!</strong>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="news03.html">Xem thêm</a></p>
-	    </div>
-	</section>
-        <!-- End Latest News -->
-	
-	<!-- Start BKU News -->
-        <section class="news">
-            <h1>Tin tức về BKU</h1>
-	    <div class="BKU-news">
-        	<p><strong>Sứ mệnh - Tầm nhìn của BKU</strong>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="news04.html">Xem thêm</a></p>
-		<p><strong>BKU Company - All you need to know</strong>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="intro.html">Xem thêm</a></p>
-   	    </div>
-	</section>
-	<!-- End BKU News -->
+        <!-- Start About -->
+        <section class="about">
+            <h1><strong>
+                <?php echo $new['title'] ?>
+            </strong></h1>
+            <p><?php echo $new['content'] ?></p>
+	    
+            <p><?php echo $new['subcontent'] ?></p>
+        </section>
+        <!-- End About -->
 
+        
+       
+
+   
         <!-- Start Footer -->
         <footer class="row1">
             <div>

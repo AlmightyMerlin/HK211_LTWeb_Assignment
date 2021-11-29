@@ -49,7 +49,7 @@ if (isset($_POST['brandId'])) {
 						<a id="blink2" class="Title" href="contact.html">Liên hệ</a>
 					</div>
 					<div class="dropdown nav-item nav-link">
-						<a id="blink3" class="Title" href="news.html">Tin tức</a>
+						<a id="blink3" class="Title" href="news.php">Tin tức</a>
 					</div>
 					<div class="dropdown nav-item nav-link">
 

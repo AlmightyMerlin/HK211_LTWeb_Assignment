@@ -172,7 +172,7 @@ footer a:hover {
 
 .card .detail-content {
     padding: 1rem;
-    width: 20rem;
+    width: 23rem;
     display: none;
     position: absolute;
     background-color: #ffffff;
@@ -210,6 +210,7 @@ img.logo {
 
 /* Card */
 .card {
+    width: 25rem;
     border: 0.001px #dddddd solid;
     background-color: ffffff;
     margin: 0; /* khoảng cách giữa các products */
