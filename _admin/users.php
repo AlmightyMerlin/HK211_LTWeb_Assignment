@@ -12,7 +12,7 @@ if ($currentUser == null) {
 
 
 if (isset($_POST['btnDel'])) {
-    $id = $_POST['car_id'];
+    $id = $_POST['id'];
     deleteUser($id);
     header("Refresh:0");
 }
@@ -43,13 +43,16 @@ if (isset($_POST['btnDel'])) {
                 <td><?php echo $user['phone']; ?></td>
                 <td><?php echo (($user['role'] == 0) ? 'admin' : 'staff'); ?></td>
                 <td class="d-flex">
-                    <form action="edit.php" method="POST">
-                        <input type="text" value="<?php echo $car['name']; ?>" name="name" hidden>
-                        <input type="text" value="<?php echo $car['phone']; ?>" name="phone" hidden>
-                        <button name="btnEdit" type="submit" class="btn btn-outline-info btn-sm">Edit</button>
+                    <form action="user_edit.php" method="POST">
+                        <input type="text" value="<?php echo $user['name']; ?>" name="name" hidden>
+                        <input type="text" value="<?php echo $user['id']; ?>" name="id" hidden>
+                        <input type="text" value="<?php echo $user['phone']; ?>" name="phone" hidden>
+                        <input type="text" value="<?php echo $user['mail']; ?>" name="mail" hidden>
+                        <input type="text" value="<?php echo $user['password']; ?>" name="password" hidden>
+                        <button name="btnEdit" type="submit" class="btn btn-outline-info btn-sm mr-2">Edit</button>
                     </form>
                     <form action="" method="POST">
-                        <input type="text" value="<?php echo $car['id']; ?>" name="car_id" hidden>
+                        <input type="text" value="<?php echo $user['id']; ?>" name="id" hidden>
                         <button name="btnDel" type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
                     </form>
                 </td>

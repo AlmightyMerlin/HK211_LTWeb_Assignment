@@ -14,7 +14,7 @@ $serverName = 'localhost';
 $userName   = 'root';
 $port = 3306;
 $password   = '';
-$dbName     = 'web_assignment';
+$dbName     = 'THINKBRUH';
 
 $db         = new PDO("mysql:host=$serverName;port=$port;dbname=$dbName", $userName, $password);
 
