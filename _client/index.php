@@ -34,7 +34,7 @@ $listProducts = getProducts();
                 <a id="blink2" class="Title" href="contact.html">Liên hệ</a>
             </div>
             <div class="dropdown">
-                <a id="blink3" class="Title" href="news.html">Tin tức</a>
+                <a id="blink3" class="Title" href="news.php">Tin tức</a>
             </div>
             <div class="dropdown">
                     
@@ -101,21 +101,21 @@ $listProducts = getProducts();
                         <a href="product01.php">
                             <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
                         </a>
-                    <div class="card-body"> 
-                        <a href="product01.php">         
-                            <h2><b>
-                                <?php echo $product['pro_name']; ?>
-                            </b></h2>
-                        </a>
-                        <div class="price">
-                            <?php echo $product['price']; ?>
+                        <div class="card-body"> 
+                            <a href="product01.php">         
+                                <h2><b>
+                                    <?php echo $product['pro_name']; ?>
+                                </b></h2>
+                            </a>
+                            <div class="price">
+                                <?php echo $product['price']; ?>
+                            </div>
                         </div>
+                        <form action="product01.php" method="POST">
+                            <input type="text" value="<?php echo $product['pro_id']; ?>" name="proId" hidden>
+                            <button name="btnEdit" type="submit" class="btn btn-primary btn-sm mr-2">Edit</button>
+                        </form>
                     </div>
-                    <form action="product01.php" method="POST">
-                        <input type="text" value="<?php echo $product['pro_id']; ?>" name="proId" hidden>
-                        <button name="btnEdit" type="submit" class="btn btn-primary btn-sm mr-2">Edit</button>
-                    </form>
-                </div>
                 <?php endforeach; ?>
             </div>
 

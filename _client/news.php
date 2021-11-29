@@ -1,37 +1,46 @@
+<?php
+require_once 'php/init.php';
+
+$listNews = getNews();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Lenovo Legion 5 Intel đã có mặt tại Việt Nam!</title>
+        <title>News about BKU</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/style-news-clicked.css">
+        <link rel="stylesheet" href="../css/style-news.css">
 	
     </head>
     <body>
         <!-- Start Header -->
         <header class="logo">
-	    <a href="index.html">
+	    <a href="index.php">
             <img src="Images/hcmut.png" alt="Logo" style="width: 100px; height: 100px; display: block; margin-left: auto; margin-right: auto;">
 	    </a>
         </header>
         <!-- End Header -->
 
-        <!-- Start About -->
-        <section class="about">
-            <h1><strong>Lenovo Legion 5 Intel đã có mặt tại Việt Nam!</strong></h1>
-            <p>Ngày 16/9 vừa qua, chiếc laptop Lenovo Legion 5 Intel đầu tiên đã có mặt tại trụ sở của BKU. Đây là sự kiện nhận được sự
-	    trông đợi rất lớn từ các khách hàng của BKU trong thời gian qua. Hãy cùng khám phá những hình ảnh đầu tiên của sản phẩm này:</p>
-	    	<img src="Images/Images-Lenovo-Legion5-Intel2021/item01.jpg">
-		<img src="Images/Images-Lenovo-Legion5-Intel2021/item02.jpg">
-		<img src="Images/Images-Lenovo-Legion5-Intel2021/item03.jpg">
-		<img src="Images/Images-Lenovo-Legion5-Intel2021/item04.jpg">
-	    <p>Với thiết kế hiện đại, giá cả phải chăng cùng với uy tín được Lenovo xây dựng qua nhiều thập kỷ, chắc chắn đây sẽ là một best-seller trong thời gian tới!</p>	
-        </section>
-        <!-- End About -->
+        <!-- Start Latest News -->
+        <section class="news">
+            <h1>Tin tức mới nhất</h1>
+	    <div class="latest-news">
+                <?php foreach ($listNews as $new) : ?>
+                    <div class="card">
+                        <p><strong>
+                            <?php echo $new['title']; ?></strong>  
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                            <a href="news01.html">Xem thêm</a>
+                        </p>
+                        <form action="new.php" method="POST">
+                            <input type="text" value="<?php echo $new['new_id']; ?>" name="proId" hidden>
+                            <button name="btnEdit" type="submit" class="btn btn-primary btn-sm mr-2">Edit</button>
+                        </form>
+                    </div>
+                <?php endforeach; ?>
+	    </div>
+	</section>
 
-        
-       
-
-   
         <!-- Start Footer -->
         <footer class="row1">
             <div>
