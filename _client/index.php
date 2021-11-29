@@ -2,6 +2,7 @@
 require_once 'php/init.php';
 
 $listBrands = getBrands();
+$listProducts = getProducts();
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ $listBrands = getBrands();
     <!-- <style>
         <?php include './style.css'; ?>
     </style> -->
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -23,34 +24,70 @@ $listBrands = getBrands();
     <div class="grid-container">
         <header class="row">
             <div>
-                <a href="index.html"><img class="logo" src="../Images/hcmut.png" alt="Logo" /></a>
+                <img class="logo" src="Images/hcmut.png" alt="Logo">
             </div>
             <div>
                 <div class="dropdown">
-                    <a class="Title" href="#">Laptop</a>
+                <a id="blink1" class="Title" href="intro.html">Giới thiệu</a>
+            </div>
+                <div class="dropdown">
+                <a id="blink2" class="Title" href="contact.html">Liên hệ</a>
+            </div>
+            <div class="dropdown">
+                <a id="blink3" class="Title" href="news.html">Tin tức</a>
+            </div>
+            <div class="dropdown">
+                    
+            <a id="blink4" class="Title" href="#">Laptop</a>
                     <div class="dropdown-content">
                         <?php foreach ($listBrands as $brand) : ?>
                             <a href="#"><?php echo $brand['name']; ?></a>
                         <?php endforeach; ?>
-                        <a href="#">Theo nhu cầu</a>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a class="Title" href="#">PC</a>
+                    <a id="blink5" class="Title" href="#">PC</a>
                     <div class="dropdown-content">
                         <?php foreach ($listBrands as $brand) : ?>
                             <a href="#"><?php echo $brand['name']; ?></a>
                         <?php endforeach; ?>
-                        <a href="#">Theo nhu cầu</a>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <a class="Title" href="#">Phụ kiện</a>
-                </div>
+                <script type="text/javascript">
+                var blink1 = document.getElementById('blink1');
+                setInterval(function() {
+                blink1.style.opacity = (blink1.style.opacity == 0 ? 1 : 0);
+                }, 1000);
+            </script> 
+                <script type="text/javascript">
+                var blink2 = document.getElementById('blink2');
+                setInterval(function() {
+                blink2.style.opacity = (blink2.style.opacity == 0 ? 1 : 0);
+                }, 1000);
+            </script>
+            <script type="text/javascript">
+                var blink3 = document.getElementById('blink3');
+                setInterval(function() {
+                blink3.style.opacity = (blink3.style.opacity == 0 ? 1 : 0);
+                }, 1000);
+            </script>
+            <script type="text/javascript">
+                var blink4 = document.getElementById('blink4');
+                setInterval(function() {
+                blink4.style.opacity = (blink4.style.opacity == 0 ? 1 : 0);
+                }, 1000);
+            </script>
+            <script type="text/javascript">
+                var blink5 = document.getElementById('blink5');
+                setInterval(function() {
+                blink5.style.opacity = (blink5.style.opacity == 0 ? 1 : 0);
+                }, 1000);
+            </script>
             </div>
+            
             <div>
-                <a href="cart.html">Giỏ hàng</a>
-                <a href="signin.html">Sign in</a>
+                <a href="cart.html"><i class="fa fa-shopping-cart" style="font-size:30px;"></i></a>
+                <a href="signin.html"><i class="fa fa-user" style="font-size:30px;"></i></a>
             </div>
         </header>
 
@@ -59,77 +96,27 @@ $listBrands = getBrands();
                 <h1 class="normal">Giảm giá sốc</h1>
             </div>
             <div class="row left">
-                <div class="card">
-                    <form action="product01.php">
-                        <button>
+                <?php foreach ($listProducts as $product) : ?>
+                    <div class="card">
+                        <a href="product01.php">
                             <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
-                        </button>
+                        </a>
+                    <div class="card-body"> 
+                        <a href="product01.php">         
+                            <h2><b>
+                                <?php echo $product['pro_name']; ?>
+                            </b></h2>
+                        </a>
+                        <div class="price">
+                            <?php echo $product['price']; ?>
+                        </div>
+                    </div>
+                    <form action="product01.php" method="POST">
+                        <input type="text" value="<?php echo $product['pro_id']; ?>" name="proId" hidden>
+                        <button name="btnEdit" type="submit" class="btn btn-primary btn-sm mr-2">Edit</button>
                     </form>
-                    <div class="card-body">
-                        <form action="product01.php">
-                            <button>
-                                <h2><b>Dell Inspiron 3505</b></h2>
-                            </button>
-                        </form>
-                        <div class="price">201</div>
-                    </div>
                 </div>
-                
-                <div class="card">
-                    <a href="product.html">
-                        <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
-                    </a>
-                    <div class="card-body">
-                        <a href="product.html">
-                            <h2><b>Dell Inspiron 3505</b></h2>
-                        </a>
-                        <div class="price">201</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <a href="product.html">
-                        <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
-                    </a>
-                    <div class="card-body">
-                        <a href="product.html">
-                            <h2><b>Dell Inspiron 3505</b></h2>
-                        </a>
-                        <div class="price">201</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <a href="product.html">
-                        <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
-                    </a>
-                    <div class="card-body">
-                        <a href="product.html">
-                            <h2><b>Dell Inspiron 3505</b></h2>
-                        </a>
-                        <div class="price">201</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <a href="product.html">
-                        <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
-                    </a>
-                    <div class="card-body">
-                        <a href="product.html">
-                            <h2><b>Dell Inspiron 3505</b></h2>
-                        </a>
-                        <div class="price">201</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <a href="product.html">
-                        <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
-                    </a>
-                    <div class="card-body">
-                        <a href="product.html">
-                            <h2><b>Dell Inspiron 3505</b></h2>
-                        </a>
-                        <div class="price">201</div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
 
             <br><br>

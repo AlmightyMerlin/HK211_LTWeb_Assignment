@@ -55,6 +55,7 @@ function getBrands()
 	if ($stmt == FALSE) return;
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
 function findProductById($id)
 {
 	global $db;
@@ -62,6 +63,14 @@ function findProductById($id)
 	$stmt->execute(array($id));
 	if ($stmt == FALSE) return;
 	return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function getProducts()
+{
+	global $db;
+	$stmt = $db->query("SELECT * FROM PRODUCT");
+	if ($stmt == FALSE) return;
+	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 // function addUser($id, $mail, $password, $name, $phone, $role)

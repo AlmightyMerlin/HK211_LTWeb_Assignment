@@ -1,6 +1,7 @@
 body {
     width: 100%;
     margin: 0 auto;
+    background-color: #d0e1ff;
 }
 .intro {
   display: flex;
@@ -73,11 +74,3 @@ footer .logo {
 footer a {
     color: #ffffff;
 }
-
-
-
-
-
-
-
-
