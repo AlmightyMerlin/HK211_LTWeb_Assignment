@@ -9340,20 +9340,20 @@ $product = findProductById($id);
                                             </div>
                                             <div class="box-large">
                                                 <div class="box-top">
-                                                    <img id="img-large" class="img-fluid" src="../Images/Images-Dell-Inspiron15-3505/item01.jpg" alt="">
+                                                    <img id="img-large" class="img-fluid" src="images/<?php echo $product['pro_id']; ?>/item01.jpg" alt="">
                                                 </div>
                                                 <div class="box-bottom">
                                                     <div>
-                                                        <a href="#" onclick="changeImage(1)"><img src="../Images/Images-Dell-Inspiron15-3505/item01.jpg" alt=""></a>
+                                                        <a href="#" onclick="changeImage(1)"><img src="images/<?php echo $product['pro_id']; ?>/item01.jpg" alt=""></a>
                                                     </div>
                                                     <div>
-                                                        <a href="#" onclick="changeImage(2)"><img src="../Images/Images-Dell-Inspiron15-3505/item02.jpg" alt=""></a>
+                                                        <a href="#" onclick="changeImage(2)"><img src="images/<?php echo $product['pro_id']; ?>/item02.jpg" alt=""></a>
                                                     </div>
                                                     <div>
-                                                        <a href="#" onclick="changeImage(3)"><img src="../Images/Images-Dell-Inspiron15-3505/item03.jpg" alt=""></a>
+                                                        <a href="#" onclick="changeImage(3)"><img src="images/<?php echo $product['pro_id']; ?>/item03.jpg" alt=""></a>
                                                     </div>
                                                     <div>
-                                                        <a href="#" onclick="changeImage(4)"><img src="../Images/Images-Dell-Inspiron15-3505/item04.jpg" alt=""></a>
+                                                        <a href="#" onclick="changeImage(4)"><img src="images/<?php echo $product['pro_id']; ?>/item04.jpg" alt=""></a>
                                                     </div>
                                                 </div>
                                             </div>

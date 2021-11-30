@@ -369,3 +369,33 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+CREATE TABLE `user` (
+  `id` varchar(100) NOT NULL,
+  `mail` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `createdAt` datetime NOT NULL DEFAULT current_timestamp(),
+  `role` int(11) DEFAULT 2
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `mail`, `password`, `name`, `phone`, `createdAt`, `role`) VALUES
+('0', 'duc.le200115@hcmut.edu.vn', 'password', 'Duc Le', '0911360460', '2021-11-22 17:40:08', 0),
+('1', 'customer@hcmut.edu.vn', 'password', 'customer', '0123456789', '2021-11-22 18:29:29', 2);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+COMMIT;

@@ -34,26 +34,25 @@ if (isset($_POST['brandId'])) {
         <div class="row left">
             <?php foreach ($listProducts as $product) : ?>
                 <div class="card">
-                    <form action="product01.php" method="POST">
+                    <form action="product.php" method="POST">
                         <input type="text" value="<?php echo $product['pro_id']; ?>" name="proId" hidden>
-                        <!-- <a href="product01.php"> -->
+                        <!-- <a href="product.php"> -->
                         <!-- <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" /> -->
                         <!-- <input type="image" name="btnEdit" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png"> -->
                         <!-- <button name="btnEdit" type="submit">
                             <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
                         </button> -->
 
-                        <a href="product01.php">
+                        <input type="image" src="images/<?php echo $product['pro_id']; ?>/item01.jpg">
+                        <!-- <a href="product.php">
                             <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
-                        </a>
+                        </a> -->
                     </form>
                     <!-- </a> -->
                     <div class="card-body">
-                        <a href="product01.php">
                             <h2><b>
                                     <?php echo $product['pro_name']; ?>
                                 </b></h2>
-                        </a>
                         <div class="price">
                             <?php echo currency_format($product['price']); ?>
                         </div>
@@ -127,11 +126,11 @@ if (isset($_POST['brandId'])) {
         <div class="row left">
             <?php foreach ($listProductsFiltered as $product) : ?>
                 <div class="card">
-                    <a href="product01.php">
-                        <img class="medium" src="images/dell-inspiron-3505-chinh-hang-y1n1t2-thinkprojpg.png" alt="Dell Inspiron" />
+                    <a href="product.php">
+                        <img class="medium" src="images/<?php echo $product['pro_id']; ?>/item01.jpg" alt="Dell Inspiron" />
                     </a>
                     <div class="card-body">
-                        <a href="product01.php">
+                        <a href="product.php">
                             <h2><b>
                                     <?php echo $product['pro_name']; ?>
                                 </b></h2>
