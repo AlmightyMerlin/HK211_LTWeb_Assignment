@@ -27,7 +27,6 @@ if (isset($_POST['btnDel'])) {
         <?php foreach ($listProducts as $product) : ?>
             <div class="card" style="width: 18rem;">
                 <!-- <img class="card-img-top" src="<?php echo $product['url']; ?>" alt="Card image cap"> -->
-                <img class="card-img-top" src="../Images/Images-Dell-Inspiron15-3505/item01.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $product['pro_name']; ?></h5>
                     <p class="card-text"><?php echo $product['desc']; ?></p>

@@ -9284,44 +9284,9 @@ $product = findProductById($id);
 </head>
 
 <body>
-    <!-- <noscript data-n-head="ssr" data-hid="gtm-noscript" data-pbody="true">
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THD95QT&" height="0" width="0" style="display:none;visibility:hidden" title="gtm"></iframe>
-    </noscript> -->
     <div data-server-rendered="true" id="__nuxt">
         <!---->
         <div id="__layout">
-            <!-- <div id="app" class="min-h-screen flex flex-col">
-                <div data-fetch-key="Header:0" class="sticky_zindex relative z-20">
-                    <div id="appleid-signin" data-color="black" data-border="true" data-type="sign in" style="display:none;"></div>
-                    <header id="header" class="setcion header header-mobile">
-                        <div class="f-hdtop flex items-center h-15 w-full bg-white">
-                            <a href="#" class="fs-logo nuxt-link-active">
-                                <img src="../Images/hcmut.png" width="40" height="40" alt="hcmut">
-                            </a>
-                            <div class="header__right text-dark-gray">
-                                <div class="gio-hang">
-
-                                    <a id="cart-mobile" href="javascript:;" class="onclick">
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 icon icon-icons">
-                                                <use href="/_nuxt/9342dacb4eaef0aefc03c6d91ee1fb27.svg#i-cart" xlink:href="/_nuxt/9342dacb4eaef0aefc03c6d91ee1fb27.svg#i-cart">
-                                                </use>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                    <div class="wrap-fill" style="display:none;">
-                                        <div class="title flex justify-center">
-                                            <strong>0 sản phẩm</strong>
-                                            trong giỏ hàng
-                                            <a href="javascript:;" class="close">×</a>
-                                        </div>
-                                        <div class="note">Bạn chưa có sản phẩm nào trong giỏ hàng</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </header>
-                </div> -->
 
             <?php include 'php/header.php'; ?>
             <main id="main" class="md:pt-6 mb-auto border-t border-gray-100 md:border-t-0">
@@ -9498,33 +9463,6 @@ $product = findProductById($id);
 
                 </div>
             </main>
-            <!-- <div>
-                <footer class="row">
-                    <div>
-                        <img class="logo" src="../Images/hcmut.png" alt="Logo" />
-                    </div>
-                    <div>
-                        <ul>
-                            <li>
-                                <h2 class="normal">Chính sách</h2>
-                            </li>
-                            <li><a href="#">Bảo hành</a></li>
-                            <li><a href="#">Vận chuyển</a></li>
-                            <li><a href="#">Thanh toán</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li>
-                                <h2 class="normal">Hệ thống cửa hàng</h2>
-                            </li>
-                            <li>268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh</li>
-                            <li><a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+B%C3%A1ch+khoa+-+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+Qu%E1%BB%91c+gia+TP.HCM/@10.7733743,106.6606193,15z/data=!4m5!3m4!1s0x0:0xef77cd47a1cc691e!8m2!3d10.7733743!4d106.6606193">
-                                    Chỉ đường</a></li>
-                        </ul>
-                    </div>
-                </footer>
-            </div> -->
 
             <?php include 'php/footer.php'; ?>
         </div>
@@ -9540,7 +9478,7 @@ $product = findProductById($id);
         }
     </script> -->
 
-    <script src="js/js-Dell-Inspiron15-3505/fun.js"></script>
+    <script src="js/fun.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
 

@@ -240,7 +240,7 @@ CREATE TABLE `news` (
 
 INSERT INTO `news` VALUES
 ('1','Lenovo Legion 5 Intel đã có mặt tại Việt Nam!',
-'Ngày 16/9 vừa qua, chiếc laptop Lenovo Legion 5 Intel đầu tiên đã có mặt tại trụ sở của BKU. Đây là sự kiện nhận được sự trông đợi rất lớn từ các khách hàng của BKU trong thời gian qua. Hãy cùng khám phá những hình ảnh đầu tiên của sản phẩm này:<img src="Images/Images-Lenovo-Legion5-Intel2021/item01.jpg"><img src="Images/Images-Lenovo-Legion5-Intel2021/item02.jpg"><img src="Images/Images-Lenovo-Legion5-Intel2021/item03.jpg"><img src="Images/Images-Lenovo-Legion5-Intel2021/item04.jpg">',
+'Ngày 16/9 vừa qua, chiếc laptop Lenovo Legion 5 Intel đầu tiên đã có mặt tại trụ sở của BKU. Đây là sự kiện nhận được sự trông đợi rất lớn từ các khách hàng của BKU trong thời gian qua. Hãy cùng khám phá những hình ảnh đầu tiên của sản phẩm này:<img src="Images/SP002/item01.jpg"><img src="Images/SP002/item02.jpg"><img src="Images/SP002/item03.jpg"><img src="Images/SP002/item04.jpg">',
 'Với thiết kế hiện đại, giá cả phải chăng cùng với uy tín được Lenovo xây dựng qua nhiều thập kỷ, chắc chắn đây sẽ là một best-seller trong thời gian tới!'),
 ('2','No nervous November!',
 'Bạn lo lắng vì vẫn chưa sắm được một em laptop ưng ý "xử đẹp" công việc mùa dịch?<br>Bạn chán nản vì học online mà laptop cứ giật lag, không thể tập trung?<br><strong>Dẹp ngay những suy nghĩ tiêu cực đó nào</strong>. <b>Tháng 11 này</b>, BKU tri ân khách hàng với hàng loạt ưu đãi khủng đi kèm những sản phẩm chất lượng:',

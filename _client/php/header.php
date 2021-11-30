@@ -111,7 +111,7 @@ if (isset($_POST['brandId'])) {
 
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="user_edit.php">Information</a>
-						<a class="dropdown-item" href="cart.html">Cart</a>
+						<a class="dropdown-item" href="cart.php">Cart</a>
 						<a class="dropdown-item" href="/_admin/logout.php">Log out</a>
 					</div>
 				</div>
